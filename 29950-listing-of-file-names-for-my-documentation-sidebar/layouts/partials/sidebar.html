@@ -1,0 +1,14 @@
+<ul class="sidebar">
+    <h3 class="header">DOC</h3>
+    {{$docpage := .Site.GetPage "docs"}}
+    {{range $docpage.Sections}}
+    <li> {{ .Title }}
+        <ul>
+            {{range .Pages}}
+            <li> <a href="{{.Permalink}}">{{.Title }}</a></li>
+            {{end}}
+        </ul>
+    </li>
+    {{end}}
+</ul>
+<!-- {#{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}-->
