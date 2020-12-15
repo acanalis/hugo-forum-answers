@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> {{ .Title }} </title>
+</head>
+
+<body>
+  {{ .Scratch.SetInMap "greetings" "english" "Hello" }}
+  {{ .Scratch.SetInMap "greetings" "french" "Bonjour" }}
+  {{ printf "%T" (.Scratch.GetSortedMapValues "greetings") }} 
+</body>
+
+</html>

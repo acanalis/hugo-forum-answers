@@ -1,0 +1,1 @@
+Failed experiment. [The docs](https://gohugo.io/functions/scratch/#getsortedmapvalues) say that it should return an array, when it returns an interface{}
