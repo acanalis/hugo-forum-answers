@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      {{ .Title }}
+    </title>
+  </head>
+  <body>
+     <h2> List of Pages </h2>
+    <ol>
+        {{ range .Pages }}
+        <li> {{ .Title }}
+            <ol> 
+                {{ range .Pages.GroupByParam "subtag" }}
+                    <li>{{.Key}}
+                        <ol>
+                            {{ range .Pages }}
+                            <li><a href="{{.Permalink}}">😎{{.Title}}</a></li>
+                            {{ end }}
+                        </ol>
+                     </li>
+                {{ end }}
+            </ol>
+        </li>
+        {{ end }}
+    </ol>
+  </body>
+</html>
